@@ -1,0 +1,34 @@
+#Задание 1
+files = [
+    ["folder", "coursework.doc", "folder", "pict.png", "data.accdb"],
+    ["icon.ico", "script.js", "index.html", "style.css", "prog.py"],
+    ["my_song.mp3", "anapa-2003.jpg", "cs_1.6.exe", "folder", "cheat.txt"],
+    ["notes.txt", "main.py", "work.pdf", "cartoon.mp4", "array.py"],
+    ["project.psd", "cycle.py", "folder", "cycle.js", "turtle.py"]
+]
+print("Исходный массив:")
+for row in files:
+    print(row)
+for i in range(len(files)):
+    for j in range(len(files[i])):
+        if files[i][j] == "folder":
+            files[i][j] = ""
+        if files[i][j] == "data.accdb":
+            files[i][j] = "data.sql"
+print("\nМассив после изменений:")
+for row in files:
+    print([item for item in row if item])
+py_files = ()
+for row in files:
+    for item in row:
+        if item.endswith(".py"):
+            py_files.append(item)
+print("\nФайлы с расширением .py:")
+print(py_files)
+js_files = ()
+for i in range(len(files)):
+    for j in range(len(files[i])):
+        if files[i][j].endswith(".js"):
+            js_files.append("new_" + files[i][j])
+print("\nОбработанные файлы .js:")
+print(js_files)
